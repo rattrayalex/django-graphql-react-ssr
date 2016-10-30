@@ -8,7 +8,6 @@ django_api:
     - redis:redis
   volumes:
     - ./django_api:/code
-    - ./django_api/static:/code/static
   env_file: .env
   environment:
     DEBUG: 'true'
@@ -20,9 +19,7 @@ nginx:
   ports:
     - "80:80"
   volumes:
-    - /www/static
-  volumes_from:
-    - django_api
+    - ./django_api/static:/www/static
   links:
     - django_api:django_api
 
