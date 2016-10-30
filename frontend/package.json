@@ -1,0 +1,43 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "blah",
+  "repository": "blah",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run client:start & npm run server:start",
+    "client:start": "webpack -w",
+    "server:start": "nodemon -L --ignore public --ignore client index.js",
+    "client:build": "TODO (for production)",
+    "server:build": "TODO (for production)"
+  },
+  "author": "Alex Rattray <rattray.alex@gmail.com> (http://alexrattray.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-client": "^0.5.0",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.7",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-eslatest-node6": "^1.0.1",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "graphql-tag": "^0.1.15",
+    "koa": "next",
+    "koa-logger": "next",
+    "koa-mount": "next",
+    "koa-proxy": "^0.6.0",
+    "koa-static": "next",
+    "nodemon": "^1.11.0",
+    "react": "^15.3.2",
+    "react-apollo": "^0.5.14",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^3.0.0",
+    "react-router-redux": "^4.0.6",
+    "redux": "^3.6.0",
+    "webpack": "^1.13.3"
+  }
+}
