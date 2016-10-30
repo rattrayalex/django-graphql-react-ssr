@@ -1,0 +1,34 @@
+- model: app.company
+  pk: 1
+  fields:
+    name: Hired
+
+- model: app.job
+  pk: 1
+  fields:
+    title: Talent Advocate
+    company: 1
+- model: app.job
+  pk: 2
+  fields:
+    title: Curation Specialist
+    company: 1
+- model: app.job
+  pk: 3
+  fields:
+    title: Systems Engineer
+    company: 1
+
+- model: app.company
+  pk: 2
+  fields:
+    name: Remix
+
+- model: app.job
+  pk: 4
+  fields:
+    title: Data Process Engineer
+- model: app.job
+  pk: 5
+  fields:
+    title: Business Process Engineer
