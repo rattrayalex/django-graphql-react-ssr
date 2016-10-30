@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'graphene_django',
+
+    'app',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +73,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'django_api_project.wsgi.application'
 
+
+GRAPHENE = {
+    'SCHEMA': 'django_api_project.schema.schema'
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases

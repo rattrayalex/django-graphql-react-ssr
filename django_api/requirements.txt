@@ -2,3 +2,5 @@ Django
 gunicorn
 psycopg2
 redis
+graphene_django
+django-filter==0.14.0
