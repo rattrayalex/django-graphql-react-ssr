@@ -4,10 +4,12 @@ server {
     server_name example.org;
     charset utf-8;
 
+    # django static
     location /static {
         alias /www/static;
     }
 
+    # the 3 django endpoints
     # tried cleaning up, was difficult, duplication won.
     location /api {
         proxy_pass http://django_api:8000;
@@ -26,6 +28,14 @@ server {
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+
+    # js
+    location / {
+        proxy_pass http://frontend:3000;
+        proxy_set_header host $host;
+        proxy_set_header x-real-ip $remote_addr;
+        proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
     }
 
 }

@@ -13,6 +13,17 @@ django_api:
     DEBUG: 'true'
   command: python manage.py runserver 0.0.0.0:8000
 
+# frontend:
+#   restart: always
+#   build: ./frontend
+#   expose:
+#     - "3000"
+#   volumes:
+#     - ./frontend:/code
+#   environment:
+#     NODE_ENV: 'development'
+#   command: yarn run start
+
 nginx:
   restart: always
   build: ./nginx/
@@ -22,6 +33,11 @@ nginx:
     - ./django_api/static:/www/static
   links:
     - django_api:django_api
+    # - frontend:frontend
+  extra_hosts:
+    # requires `export DOCKERHOST="$(ifconfig en0 inet | grep "inet " | awk -F'[: ]+' '{ print $2 }')"` in ~/.bash_profile
+    - "frontend:$DOCKERHOST"
+
 
 postgres:
   restart: always
