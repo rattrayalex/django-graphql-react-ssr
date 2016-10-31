@@ -2,10 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import ApolloClient from 'apollo-client';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
-import { browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import { ApolloProvider } from 'react-apollo'
+import { Router, browserHistory } from 'react-router'
 
-import StateWrapper from 'components/StateWrapper'
+import routes from 'routes'
 import reducers from 'flux/reducers'
 
 
@@ -28,9 +29,9 @@ const history = syncHistoryWithStore(browserHistory, store)
 
 
 const App = () => (
-  <StateWrapper store={store} history={history} client={client} >
-    <div>hello</div>
-  </StateWrapper>
+  <ApolloProvider client={client} store={store}>
+    <Router history={history} routes={routes} />
+  </ApolloProvider>
 )
 
 // TODO: use a constant, reference in renderHtmlPage

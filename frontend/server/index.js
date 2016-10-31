@@ -13,7 +13,7 @@ app.use(async (ctx, next) => {
   try {
     await next()
   } catch (err) {
-    ctx.body = { message: err.message }
+    ctx.body = { message: err.message, stack: err.stack }
     ctx.status = err.status || 500
   }
 })
@@ -22,4 +22,6 @@ app.use(mount('/public', serve('public')))
 
 app.use(reactApp)
 
-app.listen(3000)
+app.listen(3000, () => {
+  console.log('serving...')
+})

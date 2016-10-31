@@ -1,5 +1,5 @@
 django_api/static
 frontend/node_modules
 frontend/.yarn-cache
-frontend/yarn-error.log
+frontend/*.log
 frontend/public/*.bundle.js
