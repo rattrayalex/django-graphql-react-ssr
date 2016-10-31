@@ -1,17 +1,16 @@
+/* @flow */
 import React from 'react'
-import ReactDom from 'react-dom/server'
 import Helmet from 'react-helmet'
 import { createStore, combineReducers } from 'redux'
 import { match, RouterContext } from 'react-router'
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import { routerReducer } from 'react-router-redux'
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import { ApolloProvider } from 'react-apollo'
-import { renderToStringWithData } from "react-apollo/server"
+import { renderToStringWithData } from 'react-apollo/server'
 
 import renderHtmlPage from './renderHtmlPage'
 
 import routes from '../routes'
-import CompaniesShow from '../components/pages/CompaniesShow'
 
 const amatch = async (...args) => new Promise((resolve, reject) => {
   match(...args, (error, redirectLocation, renderProps) => {
@@ -23,10 +22,10 @@ const amatch = async (...args) => new Promise((resolve, reject) => {
   })
 })
 
-export default async function reactApp(ctx, next) {
+export default async function reactApp(ctx: Ctx) {
   const { redirectLocation, renderProps } = await amatch({
     routes,
-    location: ctx.request.url
+    location: ctx.request.url,
   })
 
   if (redirectLocation) {
@@ -53,12 +52,15 @@ export default async function reactApp(ctx, next) {
     </ApolloProvider>
   )
 
-  // note use of var b/c blocks...
+  let renderResult = {}
+  let head = null
   try {
-    var { markup, initialState } = await renderToStringWithData(app)
+    renderResult = await renderToStringWithData(app)
   } finally {
-    var head = Helmet.rewind()
+    head = Helmet.rewind()
   }
+  const { markup, initialState } = renderResult
+
 
   ctx.body = renderHtmlPage(markup, head, initialState)
 }

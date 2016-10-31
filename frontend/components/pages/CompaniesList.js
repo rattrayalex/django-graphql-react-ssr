@@ -1,7 +1,9 @@
+/* @flow */
 import React from 'react'
 import { Link } from 'react-router'
 import { graphql } from 'react-apollo'
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
+
 
 const CompaniesQuery = gql`
   query Companies {
@@ -14,11 +16,11 @@ const CompaniesQuery = gql`
       }
     }
   }
-`;
+`
 
 class Companies extends React.Component {
   render() {
-    const { data: { allCompanies} } = this.props
+    const { data: { allCompanies } } = this.props
     return (
       <div>
         Companies:

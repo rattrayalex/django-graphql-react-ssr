@@ -1,7 +1,7 @@
+/* @flow */
 import React from 'react'
-import { Link } from 'react-router'
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
 
 const CompanyQuery = gql`
   query Company($companyId: ID!) {
@@ -18,7 +18,7 @@ const CompanyQuery = gql`
       }
     }
   }
-`;
+`
 
 class Company extends React.Component {
   render() {
@@ -56,5 +56,5 @@ class Company extends React.Component {
 // : null)
 
 export default graphql(CompanyQuery, {
-  options: ({ params: { companyId } }) => ({ variables: { companyId }})
+  options: ({ params: { companyId } }) => ({ variables: { companyId } }),
 })(Company)

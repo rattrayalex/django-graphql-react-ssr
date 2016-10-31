@@ -1,4 +1,4 @@
-/*eslint-env node */
+/* eslint-env node */
 const path = require('path')
 const webpack = require('webpack')
 
@@ -11,11 +11,6 @@ module.exports = {
     path: path.resolve('public'),
     filename: '[name].bundle.js',
   },
-  resolve: {
-    root: [
-      path.resolve('.'),
-    ]
-  },
   devtool: 'cheap-module-eval-source-map',
   watchOptions: { poll: 500 },  // until https://github.com/docker/docker/issues/18246 is resolved
   module: {
@@ -25,8 +20,8 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['latest', 'react']
-        }
+          presets: ['latest', 'react'],
+        },
       },
       {
         test: /\.css$/,

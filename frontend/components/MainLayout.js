@@ -1,3 +1,4 @@
+/* @flow */
 import React from 'react'
 import Helmet from 'react-helmet'
 
@@ -7,10 +8,10 @@ export default class MainLayout extends React.Component {
     return (
       <div className="container">
         <Helmet
-          htmlAttributes={{ lang: "en" }}
+          htmlAttributes={{ lang: 'en' }}
           defaultTitle="Hello World"
           script={[
-            { src: '/public/app.bundle.js', async: true }
+            { src: '/public/app.bundle.js', async: true },
           ]}
         />
         {children}

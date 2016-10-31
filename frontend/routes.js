@@ -1,9 +1,9 @@
 import React from 'react'
 import { IndexRedirect, Route } from 'react-router'
 
-import MainLayout from './Components/MainLayout'
-import CompaniesList from './Components/pages/CompaniesList'
-import CompaniesShow from './Components/pages/CompaniesShow'
+import MainLayout from './components/MainLayout'
+import CompaniesList from './components/pages/CompaniesList'
+import CompaniesShow from './components/pages/CompaniesShow'
 
 
 export default (

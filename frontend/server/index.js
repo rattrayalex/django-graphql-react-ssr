@@ -1,5 +1,5 @@
+/* @flow */
 import Koa from 'koa'
-import convert from 'koa-convert'
 import logger from 'koa-logger'
 import serve from 'koa-static'
 import mount from 'koa-mount'
@@ -23,5 +23,5 @@ app.use(mount('/public', serve('public')))
 app.use(reactApp)
 
 app.listen(3000, () => {
-  console.log('serving...')
+  console.log('serving...')  // eslint-disable-line no-console
 })

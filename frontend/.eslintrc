@@ -1,0 +1,27 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "plugin:flowtype/recommended"],
+  "plugins": [
+    "flowtype",
+    "babel",
+    "import"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true,
+  },
+  "rules": {
+    "comma-dangle": [1, "always-multiline"],
+    "semi": [2, "never"],
+    "react/jsx-filename-extension": 0,
+    "no-param-reassign": 0,
+    "no-underscore-dangle": 0,
+    "no-use-before-define": ["error", { "functions": false }],
+  }
+}

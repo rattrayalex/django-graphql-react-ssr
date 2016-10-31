@@ -1,22 +1,23 @@
+/* @flow */
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ApolloClient from 'apollo-client';
+import ApolloClient from 'apollo-client'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import { ApolloProvider } from 'react-apollo'
 import { Router, browserHistory } from 'react-router'
 
-import routes from 'routes'
-import reducers from 'flux/reducers'
+import routes from '../routes'
+import { sampleReducer } from '../flux/reducers'
 
 
 // By default, this client will send queries to the
 //  `/graphql` endpoint on the same host
-const client = new ApolloClient();
+const client = new ApolloClient()
 
 const store = createStore(
   combineReducers({
-    // ...reducers,
+    sampleReducer,
     apollo: client.reducer(),
     routing: routerReducer,
   }),
@@ -37,4 +38,3 @@ const App = () => (
 // TODO: use a constant, reference in renderHtmlPage
 const target = document.getElementById('react-container')
 ReactDOM.render(<App />, target)
-console.log('aiight')

@@ -1,0 +1,12 @@
+[ignore]
+.*/public/.*
+.*/node_modules/.*fbjs/.*
+
+[include]
+
+[libs]
+declarations.flow.js
+
+[options]
+suppress_comment=.*\\$FlowIssue.*
+suppress_comment=.*\\$FlowIgnore.*
