@@ -2229,6 +2229,12 @@ koa-convert, koa-convert@^1.2.0:
     co "^4.6.0"
     koa-compose "^3.0.0"
 
+koa-favicon@next:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/koa-favicon/-/koa-favicon-2.0.0.tgz#1c4e5023e71fcbfa64c59def00ae10e6942e5a6e"
+  dependencies:
+    mz "^2.0.0"
+
 koa-is-json@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/koa-is-json/-/koa-is-json-1.0.0.tgz#273c07edcdcb8df6a2c1ab7d59ee76491451ec14"
@@ -2326,6 +2332,10 @@ loader-utils@^0.2.11:
     emojis-list "^2.0.0"
     json5 "^0.5.0"
     object-assign "^4.0.1"
+
+lodash:
+  version "4.16.6"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.16.6.tgz#d22c9ac660288f3843e16ba7d2b5d06cca27d777"
 
 lodash-es@^4.2.1:
   version "4.16.4"
@@ -2574,7 +2584,7 @@ mute-stream@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.5.tgz#8fbfabb0a98a253d3184331f9e8deb7372fac6c0"
 
-mz@^2.3.1:
+mz@^2.0.0, mz@^2.3.1:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/mz/-/mz-2.4.0.tgz#987ba9624d89395388c37cb4741e2caf4dd13b1a"
   dependencies:

@@ -1,5 +1,5 @@
 /* @flow */
 
 
-export const sampleReducer = () => {}
-export const anotherSampleReducer = () => {}
+export const sampleReducer = (state = {}, action) => state
+export const anotherSampleReducer = (state = {}, action) => state
